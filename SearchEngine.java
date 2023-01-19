@@ -27,23 +27,18 @@ class SearchHandler implements URLHandler {
             return "Error";
         }
         String quString = url.getQuery();
-        System.out.println(quString);
         if (quString == null) {
             return "Error";
         }
-        System.out.println("aa");
         String[] quArr = quString.split("=");
-        System.out.println("ab");
 
         String s = null;
-        System.out.println("ac");
 
         for (int i = 0; i < quArr.length-1; i += 2) {
             if (quArr[i].equals("s")) {
                 s = quArr[i+1];
             }
         }
-        System.out.println("ad");
 
         if (s == null) {
             return "Invalid querystring";
